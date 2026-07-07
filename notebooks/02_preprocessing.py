@@ -1,9 +1,3 @@
-# %% [markdown]
-# # 02 — Preprocessing Walkthrough
-# Demonstrates each preprocessing step from `src/preprocessing.py` on real
-# sample rows before running the full pipeline.
-
-# %%
 import sys
 from pathlib import Path
 
