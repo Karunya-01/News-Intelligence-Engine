@@ -1,18 +1,3 @@
-"""
-scripts/train_all.py
-Runs every offline-safe component of the pipeline end to end, in order,
-and writes all artifacts to artifacts/. This intentionally SKIPS the heavy
-transformer fine-tuning steps (RoBERTa classifier, BERT-NER, BART/T5
-summarizer) since those need internet + ideally a GPU — run those
-separately via:
-
-    python -m src.classifier_transformer
-    python -m src.ner_model        (see finetune_bert_ner)
-    python -m src.summarizer       (see finetune_seq2seq)
-
-Usage:
-    python scripts/train_all.py
-"""
 import logging
 import sys
 from pathlib import Path
