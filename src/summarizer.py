@@ -1,24 +1,3 @@
-"""
-summarizer.py
-Deliverable #6: Abstractive summarisation notebook backend.
-
-Two paths:
-  1. `extractive_baseline_summary` — a dependency-free lead-sentence /
-     TF-IDF sentence-ranking extractive summariser. Offline-safe, gives you
-     something to demo and sanity-check the evaluation harness against
-     before spending GPU time on fine-tuning.
-  2. `finetune_seq2seq`            — fine-tunes t5-small or facebook/bart-base
-     on (article, summary_ref) pairs with the entity-grounding constraint
-     from the approach doc (every summary must include >=1 Person/Org/
-     Location entity from the source article). Requires transformers/torch
-     + internet + ideally a GPU.
-
-Evaluation: ROUGE-1/2/L (rouge-score) and BERTScore F1, per guideline #5
-("ROUGE alone is insufficient — BERTScore must be reported alongside it").
-
-Run standalone (extractive baseline + ROUGE, offline-safe):
-    python -m src.summarizer
-"""
 from __future__ import annotations
 
 import logging
