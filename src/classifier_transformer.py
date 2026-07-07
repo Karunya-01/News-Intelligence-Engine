@@ -1,22 +1,3 @@
-"""
-classifier_transformer.py
-Deliverable #4: RoBERTa fine-tuning notebook backend.
-
-Fine-tunes roberta-base with a sigmoid multilabel head (one sigmoid per
-label, BCEWithLogitsLoss), label-weighted for class imbalance, on
-`model_input` (headline + first 3 sentences, see src/preprocessing.py).
-Per-label threshold tuning (src/threshold_tuning.py) replaces the naive
-global 0.5 cutoff, per guideline #2.
-
-This is the heavy job in the project — it needs `pip install torch
-transformers datasets accelerate` plus internet access to download
-roberta-base, and ideally a GPU. It is NOT executed automatically; run it
-from notebooks/04_roberta_finetuning.py or via:
-
-    python -m src.classifier_transformer
-
-Target from the project brief: >0.81 Micro-F1 on the held-out test split.
-"""
 from __future__ import annotations
 
 import logging
