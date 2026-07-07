@@ -1,0 +1,103 @@
+seed: 42
+
+paths:
+  train_csv: "data/news_articles_train.csv"
+  eval_summary_csv: "data/news_eval_summary.csv"
+  eval_ner_csv: "data/news_eval_ner_test.csv"
+  processed_dir: "data/processed"
+  artifacts_dir: "artifacts"
+  models_dir: "models"
+
+# --- Leakage guard: these columns must NEVER be used as model inputs ---
+leakage_columns:
+  - summary_ref
+  - entities_ref
+  - mis_risk_label
+
+preprocessing:
+  drop_html: true
+  normalize_unicode: true
+  lowercase_for_baseline: true   # transformer path keeps casing
+  language_detect: true
+  allowed_languages: ["en"]
+  min_body_words: 15
+  max_bert_tokens: 512
+
+labels:
+  topic_categories:
+    - Politics
+    - Economy
+    - Health
+    - Technology
+    - Sports
+    - Entertainment
+    - Crime
+    - Environment
+    - International
+    - Education
+
+split:
+  val_size: 0.15
+  test_size: 0.15
+
+baseline:
+  tfidf_max_features: 20000
+  tfidf_ngram_range: [1, 2]
+  logreg_C: 2.0
+  svm_C: 1.0
+  word2vec_dim: 100
+  word2vec_window: 5
+  word2vec_min_count: 2
+  mlp_hidden_layers: [256, 64]
+
+transformer_classifier:
+  model_name: "roberta-base"
+  max_length: 256          # headline + first 3 sentences fits comfortably
+  batch_size: 16
+  epochs: 5
+  learning_rate: 2.0e-5
+  weight_decay: 0.01
+  warmup_ratio: 0.06
+  threshold_search_grid: [0.05, 0.95, 0.01]   # start, stop, step
+
+ner:
+  spacy_baseline_model: "en_core_web_trf"
+  transformer_model_name: "dslim/bert-base-NER"
+  custom_entity_types: ["LAW", "EVENT"]
+  max_length: 256
+  batch_size: 16
+  epochs: 8
+  learning_rate: 3.0e-5
+
+summarization:
+  model_name: "facebook/bart-base"
+  max_input_length: 512
+  max_target_length: 80     # ~3 sentences
+  batch_size: 8
+  epochs: 4
+  learning_rate: 3.0e-5
+  num_beams: 4
+  require_entity_grounding: true
+
+misinfo_scoring:
+  weights:
+    clickbait: 0.25
+    emotional_language: 0.2
+    source_credibility: 0.2
+    factual_density: 0.15
+    quote_authenticity: 0.2
+  credible_domain_whitelist:
+    - bbc.com
+    - reuters.com
+    - apnews.com
+    - thehindu.com
+    - nytimes.com
+    - theguardian.com
+
+shared_backbone:
+  tokenizer_name: "roberta-base"
+  note: "Classifier, NER and summarizer share this tokenizer/backbone family where the underlying model supports it (see src/shared_backbone.py)."
+
+streamlit:
+  title: "News Intelligence Engine"
+  port: 8501

@@ -1,0 +1,70 @@
+{
+  "avg_labels_per_article": 2.5036855036855035,
+  "median_labels_per_article": 2.0,
+  "max_labels_per_article": 8,
+  "min_labels_per_article": 1,
+  "n_unique_label_combinations": 468,
+  "n_rare_combinations_leq3": 289,
+  "most_common_combinations": [
+    [
+      [
+        "Politics"
+      ],
+      107
+    ],
+    [
+      [
+        "International"
+      ],
+      93
+    ],
+    [
+      [
+        "Economy"
+      ],
+      88
+    ],
+    [
+      [
+        "Technology"
+      ],
+      72
+    ],
+    [
+      [
+        "Entertainment"
+      ],
+      68
+    ],
+    [
+      [
+        "Crime"
+      ],
+      67
+    ],
+    [
+      [
+        "Health"
+      ],
+      66
+    ],
+    [
+      [
+        "Sports"
+      ],
+      63
+    ],
+    [
+      [
+        "Environment"
+      ],
+      52
+    ],
+    [
+      [
+        "Science"
+      ],
+      44
+    ]
+  ]
+}
