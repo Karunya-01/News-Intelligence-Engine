@@ -1,10 +1,3 @@
-"""
-threshold_tuning.py
-Guideline #2: "Per-label threshold tuning is mandatory — using a global 0.5
-threshold for multilabel classification is insufficient for imbalanced
-labels." This module is shared by the baseline models, the RoBERTa
-classifier notebook, and the Streamlit app.
-"""
 from __future__ import annotations
 
 import numpy as np
