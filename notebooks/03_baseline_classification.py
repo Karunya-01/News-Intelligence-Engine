@@ -1,7 +1,3 @@
-# %% [markdown]
-# # 03 — Baseline Classification (TF-IDF + LR / SVM, Word2Vec + MLP)
-
-# %%
 import sys
 from pathlib import Path
 
