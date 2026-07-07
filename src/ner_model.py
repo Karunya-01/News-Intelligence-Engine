@@ -1,23 +1,3 @@
-"""
-ner_model.py
-Deliverable #5: NER notebook backend — spaCy baseline vs fine-tuned BERT-NER.
-
-This module provides:
-  1. `extract_entities_spacy`      — spaCy en_core_web_trf baseline (needs
-     `python -m spacy download en_core_web_trf`, requires internet).
-  2. `extract_entities_rule_based` — a dependency-free regex/heuristic
-     fallback (dates, money, capitalised-phrase orgs/persons) so the
-     pipeline is runnable and testable without any model download.
-  3. `evaluate_ner`                — entity-level precision/recall/F1 per
-     type against the gold `entities_ref` column, with STRICT span match
-     as required by the project evaluation metrics.
-  4. Fine-tuning entry point for `dslim/bert-base-NER` with the two extra
-     custom entity types (LAW, EVENT) called out in the approach doc —
-     see `finetune_bert_ner()`. Requires transformers/torch + internet.
-
-Run standalone (uses the rule-based fallback + gold eval set):
-    python -m src.ner_model
-"""
 from __future__ import annotations
 
 import json
