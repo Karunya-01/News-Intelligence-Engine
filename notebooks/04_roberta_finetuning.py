@@ -1,13 +1,3 @@
-# %% [markdown]
-# # 04 — RoBERTa Fine-tuning for Multilabel Classification
-#
-# **Heavy notebook.** Requires `pip install torch transformers datasets
-# accelerate`, internet access to download `roberta-base`, and ideally a
-# GPU (CPU will work but will be slow for 5 epochs over ~2000 articles).
-#
-# Target from the project brief: **>0.81 Micro-F1** on held-out data.
-
-# %%
 import sys
 from pathlib import Path
 
