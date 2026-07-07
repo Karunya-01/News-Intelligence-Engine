@@ -1,8 +1,3 @@
-"""
-tests/test_preprocessing.py
-Unit tests for the parts of the pipeline that don't require internet/GPU.
-Run with:  pytest -q
-"""
 import numpy as np
 import pandas as pd
 import pytest
