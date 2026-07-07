@@ -1,18 +1,3 @@
-"""
-app/streamlit_app.py
-Deliverable #8: Live Streamlit demo.
-
-Lets a user paste in a headline + article body and see:
-  - Multilabel topic predictions (loads a fine-tuned RoBERTa model from
-    models/model_roberta_v1 if present, otherwise falls back to the
-    TF-IDF + LogisticRegression baseline trained on the fly)
-  - Extracted named entities
-  - A 3-sentence entity-aware summary
-  - The five misinformation signals + composite Mis-Risk score
-
-Run:
-    streamlit run app/streamlit_app.py
-"""
 from __future__ import annotations
 
 import sys
