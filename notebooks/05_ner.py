@@ -1,7 +1,3 @@
-# %% [markdown]
-# # 05 — Named Entity Recognition: spaCy baseline vs fine-tuned BERT-NER
-
-# %%
 import sys
 from pathlib import Path
 
