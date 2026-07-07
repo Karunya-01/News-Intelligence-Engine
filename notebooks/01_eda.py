@@ -1,9 +1,3 @@
-# %% [markdown]
-# # 01 — EDA & Label Analysis
-# Open this file in VS Code with the Python extension and run cells with
-# `Shift+Enter` (each `# %%` is a cell, shown in the Interactive Window).
-
-# %%
 import sys
 from pathlib import Path
 
