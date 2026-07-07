@@ -1,8 +1,3 @@
-"""
-utils.py
-Shared helpers used across every component: config loading, global seeding,
-and the data-leakage guard mandated by the project guidelines.
-"""
 from __future__ import annotations
 
 import random
