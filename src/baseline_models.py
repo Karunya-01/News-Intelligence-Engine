@@ -1,23 +1,3 @@
-"""
-baseline_models.py
-Deliverable #3: Baseline classification notebook backend.
-
-Implements the three baselines specified in the approach doc:
-  1. TF-IDF + Logistic Regression (One-vs-Rest)
-  2. TF-IDF + Linear SVM (One-vs-Rest)
-  3. Word2Vec averaged embeddings + MLP
-
-Evaluated with micro/macro F1, Hamming Loss, Jaccard score (per guideline
-project evaluation metrics). Also demonstrates the manual TF-IDF formula
-straight from the approach doc for transparency:
-
-    TF(t, d)  = count(t in d) / total_terms(d)
-    IDF(t)    = log(N / df(t))
-    TF-IDF    = TF * IDF
-
-Run standalone:
-    python -m src.baseline_models
-"""
 from __future__ import annotations
 
 import logging
