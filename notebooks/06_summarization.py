@@ -1,7 +1,3 @@
-# %% [markdown]
-# # 06 — Abstractive Summarisation (extractive baseline -> T5/BART fine-tune)
-
-# %%
 import sys
 from pathlib import Path
 
