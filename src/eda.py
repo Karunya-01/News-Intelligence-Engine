@@ -1,18 +1,3 @@
-"""
-eda.py
-Deliverable #1: EDA & label analysis.
-
-Produces (saved to artifacts/eda/):
-  - label_cooccurrence_heatmap.png
-  - label_density_report.txt (avg labels/article, rare combos)
-  - headline_vs_body_length.png
-  - noise_audit.txt (HTML tags, encoding errors, scrape fragments found)
-  - entity_type_distribution.png (uses the NER-labelled eval split, since
-    the training set has no gold entities — see guideline #1)
-
-Run standalone:
-    python -m src.eda
-"""
 from __future__ import annotations
 
 import json
