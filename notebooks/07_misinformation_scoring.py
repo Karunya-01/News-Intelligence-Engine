@@ -1,7 +1,3 @@
-# %% [markdown]
-# # 07 — Misinformation Signal Scoring
-
-# %%
 import sys
 from pathlib import Path
 
