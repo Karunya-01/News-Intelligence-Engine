@@ -1,25 +1,3 @@
-"""
-misinfo_scoring.py
-Deliverable #7: Misinformation signal scoring notebook backend.
-
-Five signals (approach doc step 8), each independently offline-computable:
-  (a) clickbait_score        — headline sentiment intensity / hype-word ratio
-  (b) emotional_language     — emotionally-charged word ratio (NRC lexicon if
-                                available, else a small built-in emotion
-                                wordlist fallback)
-  (c) source_credibility     — 1 - (domain in whitelist), i.e. higher = riskier
-  (d) factual_density        — inverse of named-entity count per 100 words
-                                (fewer grounded facts = higher risk)
-  (e) quote_authenticity     — ratio of indirect claims to direct quotes
-                                (more unverifiable claims = higher risk)
-
-Combined into a weighted composite Mis-Risk Score in [0, 1], calibrated
-against the ground-truth `mis_risk_label` column (never used as an input
-feature — see guideline #1 / the leakage guard).
-
-Run standalone:
-    python -m src.misinfo_scoring
-"""
 from __future__ import annotations
 
 import logging
