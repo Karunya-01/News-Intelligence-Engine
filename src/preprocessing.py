@@ -1,20 +1,3 @@
-"""
-preprocessing.py
-Deliverable #2: Text preprocessing pipeline.
-
-Handles:
-  - HTML tag stripping (headline/body_text contain ~8% HTML noise)
-  - Unicode normalisation / mojibake repair (encoding noise ~5% of body_text)
-  - Programmatic language detection & filtering via langdetect (the raw
-    `language` column has ~10% nulls / wrong labels and cannot be trusted)
-  - Boilerplate / scrape-noise removal (ads, nav fragments in `scrape_noise`)
-  - Label parsing (JSON-ish string -> list[str])
-  - Truncation strategy for the 512-token BERT limit (headline + first N
-    sentences, per the approach doc)
-
-Run standalone:
-    python -m src.preprocessing
-"""
 from __future__ import annotations
 
 import json
